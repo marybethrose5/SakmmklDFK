@@ -5,13 +5,11 @@ index 0ce2eec8c..e1bac196e 100644
 @@ -66,7 +66,7 @@ internal class DefaultDelivery(
              return DeliveryStatus.UNDELIVERED
          } catch (exception: IOException) {
-             logger.w("IOException encountered in request", exception)
 -            return DeliveryStatus.UNDELIVERED
 +            return DeliveryStatus.FAILURE
          } catch (exception: Exception) {
              logger.w("Unexpected error delivering payload", exception)
              return DeliveryStatus.FAILURE
-diff --git a/patches/Bugsnag.patch b/patches/Bugsnag.patch
 index 25c19fd4c..e69de29bb 100644
 --- a/patches/Bugsnag.patch
 +++ b/patches/Bugsnag.patch
